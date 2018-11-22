@@ -33,7 +33,7 @@ public class LogAspects {
 
     @AfterReturning(value = "com.sinosoft.aop.LogAspects.pointCut()", returning = "result")
     public void logReturn(JoinPoint joinPoint, Object result) {
-        System.out.println(joinPoint.getSignature().getName() + "正常返回...运行结果是：{" + result + "}");
+        System.out.println(joinPoint.getSignature().getName() + " 正常返回...运行结果是：{" + result + "}");
     }
 
 
