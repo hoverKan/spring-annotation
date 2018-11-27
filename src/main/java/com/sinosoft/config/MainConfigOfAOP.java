@@ -21,7 +21,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  *          后置通知(@After): logEnd ：在目标方法运行结束之后运行，无论是否抛出异常都会运行
  *          返回通知(@AfterReturning):logReturn :在目标方法(div)正常返回之后运行
  *          异常通知(@AfterThrowing):logException : 在目标方法(div) 出现异常之后运行
- *          环绕通知(@Around) : 动态代理，手动推进方法的运行(joinPoint.procced())
+ *          环绕通知(@Around) : 动态代理，手动推进方法的运行(joinPoint.proceed())
  * 4、给切面类的目标方法标注何时何地运行（通知注解）
  * 5、将切面类和业务逻辑类（目标方法所在类）都加入到容器中
  * 6、必须告诉Spring 哪个类是切面类(给切面类上加一个注解 ：@Aspect)
@@ -36,7 +36,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
  * AOP原理：【看给容器中注册了什么组件，这个组件什么时候工作，这个组件的功能是什么？】
  *      @EnableAspectJAutoProxy ：
  * 1、@EnableAspectJAutoProxy 是什么？
- *      @Import(AspectJAutoProxyRegistrar.class) 》  给容器导入 AspectJAutoProxyRegistrar
+ *      @Import(AspectJAutoProxyRegistrar.class) --》  给容器导入 AspectJAutoProxyRegistrar
  *          利用 AspectJAutoProxyRegistrar 自定义给容器中注册bean:BeanDefinition
  *          internalAutoProxyCreator = AnnotationAwareAspectJAutoProxyCreator
  *
